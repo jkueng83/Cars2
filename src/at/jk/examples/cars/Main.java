@@ -52,5 +52,17 @@ public class Main {
         carVwCaddy.printDataSheet();
         carVwCaddy.getPrice();
         carVwCaddy.getPriceTotalPerYearPerMonth(13000,10,1.2);
+
+        // Test Equals
+
+        Car carCaddy2 = new Car("grau",160,20000,5.5,carVwCaddy.getBrand(),
+                carVwCaddy.getCarType(),manufacturerOpelCorsa);
+
+        if (carVwCaddy.equals(carCaddy2)){
+            System.out.println("Autos sind identisch.");
+        } else {
+            System.out.println("Autos sind nicht identisch.");
+        }
+
     }
 }

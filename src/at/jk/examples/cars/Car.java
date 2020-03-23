@@ -1,5 +1,7 @@
 package at.jk.examples.cars;
 
+import java.util.Objects;
+
 /*
 Ein Auto hat eine Farbe, eine Maximalgeschwindigkeit, einen Basispreis, Basisverbrauch und einen Hersteller
 und einen Motor.
@@ -149,5 +151,20 @@ public class Car {
     private double round2Comma(double value) {
         return (Math.round(value * 100.00)) / 100.00;
 
+    }
+
+    @Override
+    public boolean equals(Object o) {
+        if (this == o) return true;
+        if (o == null || getClass() != o.getClass()) return false;
+        Car car = (Car) o;
+        return color.equals(car.color) &&
+                brand.equals(car.brand) &&
+                carType.equals(car.carType);
+    }
+
+    @Override
+    public int hashCode() {
+        return Objects.hash(color, brand, carType);
     }
 }
