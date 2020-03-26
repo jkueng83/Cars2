@@ -87,7 +87,7 @@ public class Car {
         return horsePower;
     }
 
-    public void printDataSheet() {
+    public void getDataSheet() {
         System.out.println();
         System.out.println("---------------------------");
         System.out.println("--- Ausdruck Datenblatt ---");
@@ -103,7 +103,6 @@ public class Car {
         System.out.println("Listenpreis:\t\t\t" + this.nominalPrice);
         System.out.println("Hersteller Rabatt:\t\t" + this.manufacturer.getDiscount() + " %");
         System.out.println("Produktionsland:\t\t" + manufacturer.getProducingCountry());
-        System.out.println();
     }
 
 
@@ -116,7 +115,7 @@ public class Car {
         double km = kmPerYear * numberOfYers;
         System.out.println();
         double roundedKm = round2Comma(km);
-        System.out.println("Im angegeben Zeitraum werden:\t\t\t\t" + roundedKm + " km gefahren.");
+        System.out.println("Im angegeben Zeitraum werden:\t\t\t\t\t" + roundedKm + " km gefahren.");
         double petrolAmountInPeriod = 0.00;
 
         if (km <= this.morePetrolAfterNKm) {
@@ -128,29 +127,32 @@ public class Car {
         }
 
         double roundedPetrolAmountInPeriod = round2Comma(petrolAmountInPeriod);
-        System.out.println("Benzinverbarauch für " + numberOfYers + " Jahre beträgt:\t" + roundedPetrolAmountInPeriod + " l");
+        System.out.println("Kraftstoffverbarauch für " + numberOfYers + " Jahre beträgt:\t" + roundedPetrolAmountInPeriod + " l");
 
         double petrolPriceInPeriod = petrolAmountInPeriod * petrolPrice;
         double roundedPetrolPriceInPeriod = round2Comma(petrolPriceInPeriod);
-        System.out.println("Benzinkosten für " + numberOfYers + " Jahre betragen:\t\t" + roundedPetrolPriceInPeriod
+        System.out.println("Kraftstoffkosten für " + numberOfYers + " Jahre betragen:\t\t" + roundedPetrolPriceInPeriod
                 + " €");
 
         double totalPrice = carPrice + petrolPriceInPeriod;
         double roundedTotalPrice = round2Comma(totalPrice);
-        System.out.println("Der Gesamtpreis für " + numberOfYers + " Jahre beträgt:\t\t" + roundedTotalPrice + " €");
+        System.out.println("Der Gesamtpreis für " + numberOfYers + " Jahre beträgt:\t\t\t" + roundedTotalPrice + " €");
 
         double roundedPricePerYear = round2Comma(totalPrice / numberOfYers);
-        System.out.println("Die jährlichen Kosten betragen:\t\t\t\t" + roundedPricePerYear + " €");
+        System.out.println("Die jährlichen Kosten betragen:\t\t\t\t\t" + roundedPricePerYear + " €");
 
         double roundedPricePerMonth = round2Comma(totalPrice / numberOfYers / 12);
-        System.out.println("Die monatlichen Kosten betragen:\t\t\t" + roundedPricePerMonth + " €");
+        System.out.println("Die monatlichen Kosten betragen:\t\t\t\t" + roundedPricePerMonth + " €");
 
-        System.out.println();
     }
 
     private double round2Comma(double value) {
         return (Math.round(value * 100.00)) / 100.00;
 
+    }
+
+    public void drive (){
+        System.out.println("Ich fahre ein Auto");
     }
 
     @Override

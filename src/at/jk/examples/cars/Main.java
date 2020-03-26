@@ -36,7 +36,7 @@ public class Main {
         car1.getPrice();
         car1.getHorsePower();
 
-        car1.printDataSheet();
+        car1.getDataSheet();
 
         car1.getPriceTotalPerYearPerMonth(13000,5,1.2);
 
@@ -49,20 +49,42 @@ public class Main {
         Engine engineVwCddy = new Engine(Engine.FUELTYPE.DIESEL,103);
         carVwCaddy.setEngine(engineVwCddy);
 
-        carVwCaddy.printDataSheet();
+        carVwCaddy.getDataSheet();
         carVwCaddy.getPrice();
         carVwCaddy.getPriceTotalPerYearPerMonth(13000,10,1.2);
 
         // Test Equals
 
-        Car carCaddy2 = new Car("grau",160,20000,5.5,carVwCaddy.getBrand(),
-                carVwCaddy.getCarType(),manufacturerOpelCorsa);
+        Car carCaddy2 = new Car("grau", 160, 20000, 5.5, carVwCaddy.getBrand(),
+                carVwCaddy.getCarType(), manufacturerOpelCorsa);
 
-        if (carVwCaddy.equals(carCaddy2)){
+        if (carVwCaddy.equals(carCaddy2)) {
             System.out.println("Autos sind identisch.");
         } else {
             System.out.println("Autos sind nicht identisch.");
         }
+
+        // Truck
+
+        Manufacturer volvoTruck = new Manufacturer("Volvo AG", "Schweden", 7.3);
+
+        Truck truck = new Truck("red", 80, 100000, 20, "Volvo",
+                "Truck Type", volvoTruck,"Trailer");
+
+        Engine truckEngine = new Engine(Engine.FUELTYPE.DIESEL, 250);
+
+        truck.setEngine(truckEngine);
+        truck.setTrailerName("Truck Trailer");
+
+        truck.getDataSheet();
+        truck.getPrice();
+        truck.getPriceTotalPerYearPerMonth(60000, 15, 1.2);
+
+        System.out.println();
+        carVwCaddy.drive();
+
+
+
 
     }
 }
