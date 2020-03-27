@@ -83,6 +83,25 @@ public class Main {
         System.out.println();
         carVwCaddy.drive();
 
+        truck.drive();
+
+        carVwCaddy.breakVehicle();
+        truck.breakVehicle();
+
+        Manufacturer man = new Manufacturer("MAN AG", "Polen", 4.3);
+        MegaTruck megaTruck = new MegaTruck("blue",75,150000,25,"MAN",
+                "MAN Mega Truck",man,"Mega Truck Trailer");
+
+        Engine megaTruckEngine = new Engine(Engine.FUELTYPE.DIESEL, 555);
+
+        megaTruck.setEngine(megaTruckEngine);
+
+        megaTruck.getPrice();
+        megaTruck.getDataSheet();
+
+        megaTruck.drive();
+        megaTruck.breakVehicle();
+
 
 
 

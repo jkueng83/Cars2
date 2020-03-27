@@ -100,7 +100,7 @@ public class Car {
         System.out.println("Motorleistung:\t\t\t" + this.engine.getHorsePower() + " PS");
         System.out.println("Verbrauch:\t\t\t\t" + this.fuelConsumption + " l/100km");
         System.out.println("Kraftstoff:\t\t\t\t" + this.engine.getFuelType());
-        System.out.println("Listenpreis:\t\t\t" + this.nominalPrice);
+        System.out.println("Listenpreis:\t\t\t" + this.nominalPrice + " €");
         System.out.println("Hersteller Rabatt:\t\t" + this.manufacturer.getDiscount() + " %");
         System.out.println("Produktionsland:\t\t" + manufacturer.getProducingCountry());
     }
@@ -152,7 +152,10 @@ public class Car {
     }
 
     public void drive (){
-        System.out.println("Ich fahre ein Auto");
+        System.out.println("Ich fahre ein Auto!");
+    }
+    public void breakVehicle(){
+        System.out.println("Ich bremse das Auto!");
     }
 
     @Override

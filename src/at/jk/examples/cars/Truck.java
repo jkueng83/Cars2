@@ -20,8 +20,14 @@ public class Truck extends Car {
 
     @Override
     public void drive() {
-        super.drive();
-        System.out.println("Truck");
+        System.out.println("Ich fahre einen Truck!");
+        // Im Truck überschrieben super.drive();
+    }
+
+    @Override
+    public void breakVehicle() {
+        //super.breakVehicle();
+        System.out.println("Ich bremse einen Truck!");
     }
 
     @Override
